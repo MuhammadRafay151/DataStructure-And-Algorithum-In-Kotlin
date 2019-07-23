@@ -8,7 +8,7 @@ fun main(args: Array<String>) {
         for (i in 0..5) {
 
 
-            l1.Add(Integer.parseInt(readLine()))
+            l1.AddFirst(Integer.parseInt(readLine()))
         }
 
 
@@ -21,4 +21,11 @@ fun main(args: Array<String>) {
    var temp= l1.ToArray()
     for ( i in temp)
         println(i)
+    println(">>>>>>Printing First Number from Linked List")
+    println(l1.GetFirst())
+    println(">>>>>>Printing Last Number from Linked List")
+    println(l1.GetLast())
+    println(">>>>>>Printing Count of Linked List")
+    println(l1.count)
+
 }

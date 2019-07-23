@@ -2,8 +2,10 @@
 class LinkedList {
     private var Head: Node? = null
     private var Tail: Node? = null
-    private var count: Int = 0
-    fun Add(Value: Int) {
+    var count: Int = 0
+        private set
+
+    fun AddLast(Value: Int) {
         var node = Node(Value)
 
         if (Head?.next == null) {
@@ -13,7 +15,21 @@ class LinkedList {
             ++count
         } else {
             Tail?.next = node
-            Tail=node
+            Tail = node
+            ++count
+        }
+    }
+
+    fun AddFirst(Value: Int) {
+        var node = Node(Value)
+        if (Head?.next == null) {
+            Head = Node()
+            Head?.next = node
+            Tail = node
+            ++count
+        } else {
+            node.next = Head?.next
+            Head?.next = node
             ++count
         }
     }
@@ -29,5 +45,12 @@ class LinkedList {
         }
         return Value
     }
+fun GetFirst():Int? {
+    return Head?.next?.data
+}
+    fun GetLast():Int? {
+        return Tail?.data
+    }
+
 
 }
